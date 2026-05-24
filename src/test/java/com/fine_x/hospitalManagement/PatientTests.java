@@ -1,5 +1,6 @@
 package com.fine_x.hospitalManagement;
 
+import com.fine_x.hospitalManagement.dto.BloodGroupCountResponseEntity;
 import com.fine_x.hospitalManagement.entity.Patient;
 import com.fine_x.hospitalManagement.entity.type.BloodGroupType;
 import com.fine_x.hospitalManagement.repository.PatientRepository;
@@ -7,6 +8,10 @@ import com.fine_x.hospitalManagement.service.PatientService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -66,15 +71,33 @@ public class PatientTests {
 //        for (Patient p: patientList) {
 //            System.out.println(p);
 //        }
-        List<Patient> patientList = patientRepository.findByBirthAfterDate(LocalDate.of(2001,12,11));
-        for (Patient p: patientList) {
-            System.out.println(p);
-        }
+//        List<Patient> patientList = patientRepository.findByBirthAfterDate(LocalDate.of(2001,12,11));
+//        for (Patient p: patientList) {
+//            System.out.println(p);
+//        }
+//
+//        List<Object[]> bloodGroupList = patientRepository.countEachBloodGroupType();
+//        for (Object[] objects: bloodGroupList) {
+//            System.out.println(objects[0] + " | " +  objects[1]);
+//        }
 
-        List<Object[]> bloodGroupList = patientRepository.countEachBloodGroupType();
-        for (Object[] objects: bloodGroupList) {
-            System.out.println(objects[0] + " | " +  objects[1]);
-        }
+//        List<Patient> patients = patientRepository.findAllPatients();
+//        for(Patient patient: patients) {
+//            System.out.println(patient);
+//        }
 
+//        int rowsUpdated = patientRepository.updateNameWithID("Safal Sharma", 9L);
+//        System.out.println((rowsUpdated));
+
+//        List<BloodGroupCountResponseEntity> bloodGroupCountResponseEntities = patientRepository.countEachBloodGroupType();
+//        for (BloodGroupCountResponseEntity bloodGroupCountResponse: bloodGroupCountResponseEntities) {
+//            System.out.println(bloodGroupCountResponse);
+//        }
+
+
+        Page<Patient> patients = patientRepository.findAllPatients(PageRequest.of(0,3, Sort.by("name")));
+        for(Patient patient: patients) {
+            System.out.println(patient);
+        }
     }
 }
