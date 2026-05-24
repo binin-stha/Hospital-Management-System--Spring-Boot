@@ -1,6 +1,7 @@
 package com.fine_x.hospitalManagement;
 
 import com.fine_x.hospitalManagement.entity.Patient;
+import com.fine_x.hospitalManagement.entity.type.BloodGroupType;
 import com.fine_x.hospitalManagement.repository.PatientRepository;
 import com.fine_x.hospitalManagement.service.PatientService;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @SpringBootTest
 public class PatientTests {
@@ -55,9 +57,24 @@ public class PatientTests {
 //            System.out.println(p);
 //        }
 
-        List<Patient> patientList = patientRepository.findByNameContainingOrderByIdDesc("i");
+//        List<Patient> patientList = patientRepository.findByNameContainingOrderByIdDesc("i");
+//        for (Patient p: patientList) {
+//            System.out.println(p);
+//        }
+
+//        List<Patient> patientList = patientRepository.findByBloodGroup(BloodGroupType.A_POSITIVE);
+//        for (Patient p: patientList) {
+//            System.out.println(p);
+//        }
+        List<Patient> patientList = patientRepository.findByBirthAfterDate(LocalDate.of(2001,12,11));
         for (Patient p: patientList) {
             System.out.println(p);
         }
+
+        List<Object[]> bloodGroupList = patientRepository.countEachBloodGroupType();
+        for (Object[] objects: bloodGroupList) {
+            System.out.println(objects[0] + " | " +  objects[1]);
+        }
+
     }
 }
