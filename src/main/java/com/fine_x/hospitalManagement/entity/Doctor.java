@@ -3,6 +3,9 @@ package com.fine_x.hospitalManagement.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Setter
 @Getter
@@ -24,7 +27,8 @@ public class Doctor {
     @Column(nullable = false, unique=true, length = 100)
     private String email;
 
-
+    @ManyToMany(mappedBy = "doctors")
+    private Set<Department> department = new HashSet<>();
 
 
 }
