@@ -48,6 +48,10 @@ public class Patient {
     @Enumerated(EnumType.STRING)
     private BloodGroupType bloodGroup;
 
+    @OneToOne
+    @JoinColumn(name="patient_insurance_id")  // Owning side
+    private Insurance insurance;
+
 //    @Override
 //    public String toString() {
 //        return "Patient{" + "id=" + id + ", name='" + name + '\'' + ", birthdate=" + birthdate + ", email='" + email + '\'' + ", gender='" + gender + '\'' + '}';
