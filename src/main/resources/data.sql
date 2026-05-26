@@ -15,3 +15,10 @@ VALUES
     ('Roshan Neupane', 'MALE', '1995-01-17', 'roshan13@gmail.com', 'O_NEGATIVE'),
     ('Mina Basnet', 'FEMALE', '2003-07-28', 'mina14@gmail.com', 'A_NEGATIVE'),
     ('Dipesh Karki', 'MALE', '1999-11-19', 'dipesh15@gmail.com', 'B_NEGATIVE');
+
+INSERT INTO doctor (name, specialization, email)
+VALUES
+('Dr. Ram Sharma', 'Cardiology', 'ram.sharma@gmail.com'),
+('Dr. Sita Rai', 'Neurology', 'sita.rai@gmail.com'),
+('Dr. Hari Thapa', 'Orthopedics', 'hari.thapa@gmail.com'),
+('Dr. Anjali Karki', 'Pediatrics', 'anjali.karki@gmail.com');
