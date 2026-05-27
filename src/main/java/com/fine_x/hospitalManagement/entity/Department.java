@@ -32,5 +32,6 @@ public class Department {
             joinColumns = @JoinColumn(name = "dpt_id"),
             inverseJoinColumns = @JoinColumn(name="doctor_id")
     )
+    @ToString.Exclude
     private Set<Doctor> doctors = new HashSet<>();
 }

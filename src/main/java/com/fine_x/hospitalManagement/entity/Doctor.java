@@ -28,7 +28,8 @@ public class Doctor {
     private String email;
 
     @ManyToMany(mappedBy = "doctors")
-    private Set<Department> department = new HashSet<>();
+    @ToString.Exclude
+    private Set<Department> departments = new HashSet<>();
 
 
 }
