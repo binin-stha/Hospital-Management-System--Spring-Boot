@@ -28,5 +28,13 @@ public class InsuranceService {
         return patient;
 
     }
+
+    @Transactional
+    public Patient disaccociateInsuranceFromPatient(Long patienId) {
+        Patient patient = patientRepository.findById(patienId).orElseThrow();
+        patient.setInsurance(null);
+
+        return patient;
+    }
 }
 

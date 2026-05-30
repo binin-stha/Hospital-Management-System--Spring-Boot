@@ -22,3 +22,21 @@ VALUES
 ('Dr. Sita Rai', 'Neurology', 'sita.rai@gmail.com'),
 ('Dr. Hari Thapa', 'Orthopedics', 'hari.thapa@gmail.com'),
 ('Dr. Anjali Karki', 'Pediatrics', 'anjali.karki@gmail.com');
+
+INSERT INTO appointment (appointment_time, reason, patient_id, doctor_id)
+VALUES
+    ('2026-06-01 09:00:00', 'General Checkup', 1, 1),
+    ('2026-06-01 10:30:00', 'Cardiac Consultation', 2, 1),
+    ('2026-06-02 11:00:00', 'Neurological Assessment', 3, 2),
+    ('2026-06-02 14:00:00', 'Orthopedic Examination', 4, 3),
+    ('2026-06-03 09:15:00', 'Pediatric Follow-up', 5, 4),
+    ('2026-06-03 11:45:00', 'Blood Pressure Monitoring', 6, 1),
+    ('2026-06-04 13:00:00', 'Migraine Evaluation', 7, 2),
+    ('2026-06-04 15:30:00', 'Knee Pain Consultation', 8, 3),
+    ('2026-06-05 10:00:00', 'Child Vaccination Review', 9, 4),
+    ('2026-06-05 14:30:00', 'Heart Disease Follow-up', 10, 1),
+    ('2026-06-06 09:45:00', 'Spinal Injury Checkup', 11, 3),
+    ('2026-06-06 12:00:00', 'Seizure Disorder Consultation', 12, 2),
+    ('2026-06-07 11:15:00', 'Routine Physical Examination', 13, 1),
+    ('2026-06-07 13:45:00', 'Growth Monitoring', 14, 4),
+    ('2026-06-08 16:00:00', 'Joint Pain Assessment', 15, 3);

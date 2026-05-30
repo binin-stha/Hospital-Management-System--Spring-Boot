@@ -33,6 +33,8 @@ public class InsuranceTest {
         Patient patient = insuranceService.assignInsuranceToPatient(insurance, 1L);
         System.out.println(patient);
 
+        var newPatient = insuranceService.disaccociateInsuranceFromPatient(patient.getId());
+        System.out.println(patient);
     }
 
     @Test
@@ -44,5 +46,8 @@ public class InsuranceTest {
 
         var newAppointment = appointmentService.createNewAppointment(appointment, 1L, 5L);
         System.out.println(newAppointment);
+
+        Appointment updatedAppointment = appointmentService.reAppointmentToAnotherDoctor(newAppointment.getId(), 3L);
+        System.out.println(updatedAppointment);
     }
 }
